@@ -1,0 +1,32 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+ version="3.0">
+
+<persistence-unit name="crmPU">
+
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+<!-- ENTITY CLASSES -->
+<class>com.crm.entity.Customer</class>
+<class>com.crm.entity.Address</class>
+<class>com.crm.entity.Lead</class>
+<class>com.crm.entity.SalesEmployee</class>
+<class>com.crm.entity.Product</class>
+<class>com.crm.entity.Order</class>
+<class>com.crm.entity.SupportTicket</class>
+
+<properties>
+
+<!-- DATABASE CONNECTION -->
+<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/crm_db"/>
+<property name="jakarta.persistence.jdbc.user" value="root"/>
+<property name="jakarta.persistence.jdbc.password" value="root"/>
+
+<!-- HIBERNATE SETTINGS -->
+<property name="hibernate.hbm2ddl.auto" value="update"/>
+<property name="hibernate.show_sql" value="true"/>
+
+</properties>
+
+</persistence-unit>
+</persistence>
